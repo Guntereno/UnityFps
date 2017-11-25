@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: ffb57c923e8450e46b1b09c2746cad79
+timeCreated: 1510505741
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Roof
+    100004: Walls
+    100006: Floor
+    100008: Lights
+    100010: Walls_Inner
+    100012: Walls_Outer
+    100014: Walls_RoomE
+    100016: Walls_RoomNW
+    100018: Walls_RoomSW
+    100020: Ceiling_Inner
+    100022: Ceiling_RoomE
+    100024: Ceiling_RoomNW
+    100026: Ceiling_RoomSW
+    100028: Floor_Inner
+    100030: Floor_RoomE
+    100032: Floor_RoomNW
+    100034: Floor_RoomSW
+    400000: //RootNode
+    400002: Roof
+    400004: Walls
+    400006: Floor
+    400008: Lights
+    400010: Walls_Inner
+    400012: Walls_Outer
+    400014: Walls_RoomE
+    400016: Walls_RoomNW
+    400018: Walls_RoomSW
+    400020: Ceiling_Inner
+    400022: Ceiling_RoomE
+    400024: Ceiling_RoomNW
+    400026: Ceiling_RoomSW
+    400028: Floor_Inner
+    400030: Floor_RoomE
+    400032: Floor_RoomNW
+    400034: Floor_RoomSW
+    2300000: //RootNode
+    2300002: Roof
+    2300004: Walls
+    2300006: Floor
+    2300008: Lights
+    2300010: Walls_Inner
+    2300012: Walls_Outer
+    2300014: Walls_RoomE
+    2300016: Walls_RoomNW
+    2300018: Walls_RoomSW
+    2300020: Ceiling_Inner
+    2300022: Ceiling_RoomE
+    2300024: Ceiling_RoomNW
+    2300026: Ceiling_RoomSW
+    2300028: Floor_Inner
+    2300030: Floor_RoomE
+    2300032: Floor_RoomNW
+    2300034: Floor_RoomSW
+    3300000: //RootNode
+    3300002: Roof
+    3300004: Walls
+    3300006: Floor
+    3300008: Lights
+    3300010: Walls_Inner
+    3300012: Walls_Outer
+    3300014: Walls_RoomE
+    3300016: Walls_RoomNW
+    3300018: Walls_RoomSW
+    3300020: Ceiling_Inner
+    3300022: Ceiling_RoomE
+    3300024: Ceiling_RoomNW
+    3300026: Ceiling_RoomSW
+    3300028: Floor_Inner
+    3300030: Floor_RoomE
+    3300032: Floor_RoomNW
+    3300034: Floor_RoomSW
+    4300000: Grid
+    4300002: Roof
+    4300004: Walls
+    4300006: Floor
+    4300008: Lights
+    4300010: Walls_RoomE
+    4300012: Walls_RoomSW
+    4300014: Walls_RoomNW
+    4300016: Walls_Inner
+    4300018: Walls_Outer
+    4300020: Ceiling_RoomE
+    4300022: Ceiling_Inner
+    4300024: Ceiling_RoomNW
+    4300026: Ceiling_RoomSW
+    4300028: Floor_RoomSW
+    4300030: Floor_RoomNW
+    4300032: Floor_Inner
+    4300034: Floor_RoomE
+    6400000: //RootNode
+    6400002: Roof
+    6400004: Walls
+    6400006: Floor
+    6400008: Lights
+    6400010: Walls_Inner
+    6400012: Walls_Outer
+    6400014: Walls_RoomE
+    6400016: Walls_RoomNW
+    6400018: Walls_RoomSW
+    6400020: Ceiling_Inner
+    6400022: Ceiling_RoomE
+    6400024: Ceiling_RoomNW
+    6400026: Ceiling_RoomSW
+    6400028: Floor_Inner
+    6400030: Floor_RoomE
+    6400032: Floor_RoomNW
+    6400034: Floor_RoomSW
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
