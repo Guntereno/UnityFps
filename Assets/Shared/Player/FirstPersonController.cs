@@ -1,11 +1,15 @@
-﻿using InControl;
+﻿using Assets.Levels;
+using Assets.Weapons;
+using InControl;
 using UnityEngine;
 
 
-namespace Shared
+namespace Assets.Shared
 {
     public class FirstPersonController : MonoBehaviour
     {
+        [Header("Components")]
+
         [SerializeField]
         CharacterController m_characterController;
 
@@ -14,6 +18,12 @@ namespace Shared
 
         [SerializeField]
         Camera m_camera;
+
+        [SerializeField]
+        Transform m_handTransform;
+
+
+        [Header("Parameters")]
 
         [SerializeField]
         private float m_strafeSpeed;
@@ -52,10 +62,12 @@ namespace Shared
         static readonly int kParamIsJumping = Animator.StringToHash("IsJumping");
         static readonly int kParamIsAiming = Animator.StringToHash("IsAiming");
 
+        private bool m_initialised = false;
 
         private float m_cameraPitch;
         private float m_ySpeed;
 
+        private WeaponController m_weapon = null;
 
         private void Start()
         {
@@ -64,8 +76,21 @@ namespace Shared
 #endif
         }
 
+        public void Init(LevelPrefabs prefabs)
+        {
+            m_weapon = GameObject.Instantiate(prefabs.HandCannon);
+            m_weapon.transform.SetParent(m_handTransform, false);
+
+            m_initialised = true;
+        }
+
         void Update()
         {
+            if(!m_initialised)
+            {
+                return;
+            }
+
             InputDevice device = InputManager.ActiveDevice;
 
             bool isCrouching = m_animator.GetBool(kParamIsCrouching);
@@ -101,6 +126,8 @@ namespace Shared
             m_animator.SetBool(kParamIsMoving, isMoving);
             m_animator.SetBool(kParamIsCrouching, isCrouching);
             m_animator.SetBool(kParamIsAiming, isAiming);
+
+            m_weapon.TriggerAmount = (!isSprinting) ? device.RightTrigger.Value : 0.0f;
 
             Vector3 speed = transform.forward * movementInput.y * m_parallelSpeed;
             speed += transform.right * movementInput.x * m_strafeSpeed;
