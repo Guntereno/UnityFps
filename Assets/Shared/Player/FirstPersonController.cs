@@ -34,6 +34,9 @@ namespace Shared
         private float m_crouchSpeedFactor;
 
         [SerializeField]
+        private float m_aimingSpeedFactor;
+
+        [SerializeField]
         private float m_minPitch;
 
         [SerializeField]
@@ -47,6 +50,7 @@ namespace Shared
         static readonly int kParamIsMoving = Animator.StringToHash("IsMoving");
         static readonly int kParamIsSprinting = Animator.StringToHash("IsSprinting");
         static readonly int kParamIsJumping = Animator.StringToHash("IsJumping");
+        static readonly int kParamIsAiming = Animator.StringToHash("IsAiming");
 
 
         private float m_cameraPitch;
@@ -55,7 +59,9 @@ namespace Shared
 
         private void Start()
         {
+#if !UNITY_EDITOR
             Cursor.lockState = CursorLockMode.Locked;
+#endif
         }
 
         void Update()
@@ -64,6 +70,8 @@ namespace Shared
 
             bool isCrouching = m_animator.GetBool(kParamIsCrouching);
             bool isSprinting = m_animator.GetBool(kParamIsSprinting);
+
+            bool isAiming = device.LeftTrigger.IsPressed;
 
             if (device.Action2.WasPressed)
             {
@@ -76,7 +84,7 @@ namespace Shared
             float movementInputMagSq = movementInput.sqrMagnitude;
             bool isMoving = (movementInputMagSq > 0.0f);
 
-            if (movementInputMagSq > m_sprintThresholdSq)
+            if ((movementInputMagSq > m_sprintThresholdSq) &! isAiming)
             {
                 if (device.LeftStickButton.WasPressed)
                 {
@@ -92,6 +100,7 @@ namespace Shared
             m_animator.SetBool(kParamIsSprinting, isSprinting);
             m_animator.SetBool(kParamIsMoving, isMoving);
             m_animator.SetBool(kParamIsCrouching, isCrouching);
+            m_animator.SetBool(kParamIsAiming, isAiming);
 
             Vector3 speed = transform.forward * movementInput.y * m_parallelSpeed;
             speed += transform.right * movementInput.x * m_strafeSpeed;
@@ -103,6 +112,10 @@ namespace Shared
             else if(isCrouching)
             {
                 speed *= m_crouchSpeedFactor;
+            }
+            else if(isAiming)
+            {
+                speed *= m_aimingSpeedFactor;
             }
 
             m_ySpeed += Physics.gravity.y * Time.deltaTime;
